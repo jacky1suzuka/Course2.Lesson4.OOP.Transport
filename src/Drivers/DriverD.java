@@ -3,7 +3,7 @@ package Drivers;
 import Transport.Bus;
 import Transport.Transport;
 
-public class DriverD <A extends Bus> extends Drivers {
+public class DriverD <A extends Transport> extends Drivers {
     private final String DRIVER_LICENSE = "D";
 
     public DriverD(String firstName, String middleName, String lastName, int experience) {
@@ -15,8 +15,8 @@ public class DriverD <A extends Bus> extends Drivers {
                 + transport.getModel() + " и будет участвовать в заезде.");
     }
 
-    public void refuel(A bus) {
-        System.out.println("Водитель заправляет " + bus.getBrand() + " " + bus.getModel());
+    public void refuel(A truck) {
+        System.out.println("Водитель заправляет " + truck.getBrand() + " " + truck.getModel());
     }
 
     @Override

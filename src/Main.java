@@ -33,24 +33,20 @@ public class Main {
         kamaz.maxSpeed();
 
 
-        DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", 2);
-        DriverC driverC = new DriverC("Федор", "Федорович", "Федоров", 5);
-        DriverD driverD = new DriverD("Лев", "Иванович", "Морозов", 10);
+        DriverB<Car> driverB = new DriverB<Car>("Иван", "Иванович", "Иванов", 2);
+        DriverC<Truck> driverC = new DriverC("Федор", "Федорович", "Федоров", 5);
+        DriverD<Bus> driverD = new DriverD("Лев", "Иванович", "Морозов", 10);
 
-        driverB.refuel(ferrari);
-        driverC.refuel(kamaz);
-        driverD.refuel(daewoo);
-
-        driverB.start();
-
-        driverB.takesPart(bmw);
         driverC.takesPart(kamaz);
-        driverD.takesPart(gazel);
 
 
 
 
-        System.out.println(driverB);
+
+
+
+
+
 
 
 

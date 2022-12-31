@@ -4,14 +4,18 @@ import Transport.Transport;
 
 import java.util.Objects;
 
-public abstract class Drivers {
+public abstract class Driver<T extends Transport> {
     private String firstName;
     private String middleName;
     private String lastName;
     private int experience;
 
 
-    public Drivers(String firstName, String middleName, String lastName, int experience) {
+    public abstract void takesPart(T transport);
+
+    public abstract void refuel(T transport);
+
+    public Driver(String firstName, String middleName, String lastName, int experience) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -67,7 +71,7 @@ public abstract class Drivers {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Drivers drivers = (Drivers) o;
+        Driver drivers = (Driver) o;
         return experience == drivers.experience && firstName.equals(drivers.firstName) && middleName.equals(drivers.middleName) && lastName.equals(drivers.lastName);
     }
 
@@ -75,4 +79,5 @@ public abstract class Drivers {
     public int hashCode() {
         return Objects.hash(firstName, middleName, lastName, experience);
     }
+
 }

@@ -1,8 +1,7 @@
 package Transport;
 
-import Drivers.DriverC;
 
-public final class Truck<A extends DriverC> extends Transport implements Competing{
+public final class Truck extends Transport {
     public Truck(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
     }

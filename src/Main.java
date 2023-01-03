@@ -37,20 +37,20 @@ public class Main {
         DriverC driverC = new DriverC("Федор", "Федорович", "Федоров", 5);
         DriverD driverD = new DriverD("Лев", "Иванович", "Морозов", 10);
 
-        driverB.refuel(ferrari);
-        driverC.refuel(kamaz);
-        driverD.refuel(daewoo);
-
-        driverB.start();
-
-        driverB.takesPart(bmw);
-        driverC.takesPart(kamaz);
-        driverD.takesPart(gazel);
+        driverC.takesPart(zil);
+        driverC.refuel(zil);
+        driverB.takesPart(lamborghini);
+        driverB.refuel(lamborghini);
 
 
 
 
-        System.out.println(driverB);
+
+
+
+
+
+
 
 
 

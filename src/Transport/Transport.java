@@ -2,7 +2,7 @@ package Transport;
 
 import java.util.Objects;
 
-public abstract class Transport {
+public abstract class Transport implements Competing {
     private String brand;
     private String model;
     private double engineVolume;
@@ -73,6 +73,7 @@ public abstract class Transport {
         }
 
     }
+
 
     @Override
     public String toString() {

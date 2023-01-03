@@ -1,22 +1,24 @@
 package Drivers;
 
 import Transport.Bus;
-import Transport.Transport;
 
-public class DriverD <A extends Bus> extends Drivers {
+public final class DriverD extends Driver<Bus> {
     private final String DRIVER_LICENSE = "D";
 
     public DriverD(String firstName, String middleName, String lastName, int experience) {
         super(firstName, middleName, lastName, experience);
     }
 
-    public void takesPart(A transport) {
+
+    @Override
+    public void takesPart(Bus transport) {
         System.out.println("Водитель " + getFullName() + " управляет автомобилем " + transport.getBrand() + " "
                 + transport.getModel() + " и будет участвовать в заезде.");
     }
 
-    public void refuel(A bus) {
-        System.out.println("Водитель заправляет " + bus.getBrand() + " " + bus.getModel());
+    @Override
+    public void refuel(Bus transport) {
+        System.out.println("Водитель заправляет " + transport.getBrand() + " " + transport.getModel());
     }
 
     @Override

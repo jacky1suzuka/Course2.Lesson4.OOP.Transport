@@ -21,9 +21,10 @@ public abstract class Driver<T extends Transport> {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
+        this.experience = experience;
 
         if (category != null && !category.isEmpty()) {
-            this.experience = experience;
+            this.category = category;
         } else {
             throw new DriverLicenseException("Тип прав водителя " + this.getFullName() + " указан неверно");
         }

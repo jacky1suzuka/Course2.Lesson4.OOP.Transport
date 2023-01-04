@@ -31,7 +31,7 @@ public class Main {
         kamaz.maxSpeed();
 
 
-        DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", 2, "");
+        DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", 2, "B");
         DriverC driverC = new DriverC("Федор", "Федорович", "Федоров", 5, "C");
         DriverD driverD = new DriverD("Лев", "Иванович", "Морозов", 10, "D");
 
@@ -67,19 +67,9 @@ public class Main {
         zil.getDiagnosed();
         ferrari.getDiagnosed();
         lada.getDiagnosed();
-        identifyDriverLicense(driverB);
 
 
 
     }
 
-    public static void identifyDriverLicense(Driver driver){
-        try {
-            if (driver.getCategory().isEmpty() | driver.getCategory() == null) {
-                throw new DriverLicenseException("У водителя " + driver.getFullName() + " неверно указан тип прав.");
-            }
-        } catch (DriverLicenseException e) {
-            System.out.println(e.getMessage());
-        }
-    }
 }

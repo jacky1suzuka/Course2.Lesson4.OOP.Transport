@@ -31,7 +31,7 @@ public class Main {
         kamaz.maxSpeed();
 
 
-        DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", 2, "B");
+        DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", 2, "");
         DriverC driverC = new DriverC("Федор", "Федорович", "Федоров", 5, "C");
         DriverD driverD = new DriverD("Лев", "Иванович", "Морозов", 10, "D");
 

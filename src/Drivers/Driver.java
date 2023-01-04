@@ -26,7 +26,11 @@ public abstract class Driver<T extends Transport> {
         if (category != null && !category.isEmpty()) {
             this.category = category;
         } else {
-            throw new DriverLicenseException("Тип прав водителя " + this.getFullName() + " указан неверно");
+            try {
+                this.category = category;
+            } catch (DriverLicenseException e) {
+                System.out.println("Тип прав указан неверно");
+            }
         }
     }
 

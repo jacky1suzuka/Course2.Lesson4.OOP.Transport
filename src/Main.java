@@ -42,20 +42,28 @@ public class Main {
         driverB.takesPart(lamborghini);
         driverB.refuel(lamborghini);
 
+        lada.setType(Car.BodyType.SEDAN);
+
+        lada.printType();
+        ferrari.printType();
 
 
+        ural.setType(Truck.LoadCapacity.N1);
+        zil.setType(Truck.LoadCapacity.N2);
+        kamaz.setType(Truck.LoadCapacity.N3);
+        ural.printType();
+        zil.printType();
+        kamaz.printType();
+        man.printType();
 
-
-
-
-
-
-
-
-
-
-
-
+        kia.setType(Bus.Capacity.VERY_SMALL);
+        hyundai.setType(Bus.Capacity.SMALL);
+        daewoo.setType(Bus.Capacity.MIDDLE);
+        gazel.setType(Bus.Capacity.VERY_LARGE);
+        kia.printType();
+        hyundai.printType();
+        daewoo.printType();
+        gazel.printType();
 
 
     }

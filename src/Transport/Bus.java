@@ -2,8 +2,54 @@ package Transport;
 
 
 public final class Bus extends Transport {
+    private Capacity type;
     public Bus(String brand, String model, double engineVolume) {
         super(brand, model, engineVolume);
+    }
+
+    public enum Capacity {
+        VERY_SMALL(null, 10),
+        SMALL(null, 25),
+        MIDDLE(40, 50),
+        LARGE(60, 80),
+        VERY_LARGE(100,120);
+
+        private final Integer FROM;
+        private final Integer TO;
+
+        Capacity(Integer FROM, Integer TO) {
+            this.FROM = FROM;
+            this.TO = TO;
+        }
+
+        @Override
+        public String toString() {
+            if (FROM != null && TO != null) {
+                return "Вместимость: от " + FROM + " человек до " + TO + " человек.";
+            } else if (FROM == null) {
+                return "Вместимость: до " + TO + " человек.";
+            } else if (TO == null) {
+                return "Вместимость: свыше " + FROM + " человек.";
+            }
+            return "";
+        }
+    }
+
+    public Capacity getType() {
+        return type;
+    }
+
+    public void setType(Capacity type) {
+        this.type = type;
+    }
+
+    @Override
+    public void printType() {
+        if (type == null) {
+            System.out.println("Данных по транспортному средству недостаточно.");
+        } else {
+            System.out.println(type);
+        }
     }
 
     @Override

@@ -41,6 +41,11 @@ public final class Car extends Transport {
     }
 
     @Override
+    public void getDiagnosed() {
+        System.out.println("Автомобиль " + getBrand() + " " + getModel() + " проходит диагностику.");
+    }
+
+    @Override
     public void pitStop() {
         System.out.println("Автомобиль " +  getBrand() + " " + getModel() + " заходит на пит-стоп.");
     }

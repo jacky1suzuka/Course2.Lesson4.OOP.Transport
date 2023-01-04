@@ -3,10 +3,9 @@ package Drivers;
 import Transport.Car;
 
 public final class DriverB extends Driver<Car> {
-    private final String DRIVER_LICENSE = "B";
 
-    public DriverB(String firstName, String middleName, String lastName, int experience) {
-        super(firstName, middleName, lastName, experience);
+    public DriverB(String firstName, String middleName, String lastName, int experience, String category) {
+        super(firstName, middleName, lastName, experience, category);
     }
 
     @Override
@@ -22,6 +21,6 @@ public final class DriverB extends Driver<Car> {
 
     @Override
     public String toString() {
-        return "ФИО - " + getFullName() + "; стаж - " + getExperience() + "; категория прав - " + DRIVER_LICENSE;
+        return "ФИО - " + getFullName() + "; стаж - " + getExperience() + "; категория прав - " + getCategory();
     }
 }

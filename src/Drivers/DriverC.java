@@ -5,8 +5,12 @@ import Transport.Truck;
 public final class DriverC extends Driver <Truck> {
     private final String DRIVER_LICENSE = "C";
 
-    public DriverC(String firstName, String middleName, String lastName, int experience) {
-        super(firstName, middleName, lastName, experience);
+    public DriverC(String firstName, String middleName, String lastName, int experience, String category) {
+        super(firstName, middleName, lastName, experience, category);
+    }
+
+    public String getDRIVER_LICENSE() {
+        return DRIVER_LICENSE;
     }
 
     @Override

@@ -5,10 +5,13 @@ import Transport.Bus;
 public final class DriverD extends Driver<Bus> {
     private final String DRIVER_LICENSE = "D";
 
-    public DriverD(String firstName, String middleName, String lastName, int experience) {
-        super(firstName, middleName, lastName, experience);
+    public DriverD(String firstName, String middleName, String lastName, int experience, String category) {
+        super(firstName, middleName, lastName, experience, category);
     }
 
+    public String getDRIVER_LICENSE() {
+        return DRIVER_LICENSE;
+    }
 
     @Override
     public void takesPart(Bus transport) {

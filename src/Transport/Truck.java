@@ -45,6 +45,11 @@ public final class Truck extends Transport {
     }
 
     @Override
+    public void getDiagnosed() {
+        System.out.println("Грузовик " + getBrand() + " " + getModel() + " проходит диагностику.");
+    }
+
+    @Override
     public void printType() {
         if (type == null) {
             System.out.println("Данных по транспортному средству недостаточно.");

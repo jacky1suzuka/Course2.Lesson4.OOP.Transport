@@ -44,6 +44,11 @@ public final class Bus extends Transport {
     }
 
     @Override
+    public void getDiagnosed() {
+        throw new RuntimeException("Автобусы не проходят диагностику");
+    }
+
+    @Override
     public void printType() {
         if (type == null) {
             System.out.println("Данных по транспортному средству недостаточно.");

@@ -1,6 +1,4 @@
-import Drivers.DriverB;
-import Drivers.DriverC;
-import Drivers.DriverD;
+import Drivers.*;
 import Transport.Bus;
 import Transport.Car;
 import Transport.Truck;
@@ -33,9 +31,9 @@ public class Main {
         kamaz.maxSpeed();
 
 
-        DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", 2);
-        DriverC driverC = new DriverC("Федор", "Федорович", "Федоров", 5);
-        DriverD driverD = new DriverD("Лев", "Иванович", "Морозов", 10);
+        DriverB driverB = new DriverB("Иван", "Иванович", "Иванов", 2, "");
+        DriverC driverC = new DriverC("Федор", "Федорович", "Федоров", 5, "C");
+        DriverD driverD = new DriverD("Лев", "Иванович", "Морозов", 10, "D");
 
         driverC.takesPart(zil);
         driverC.refuel(zil);
@@ -66,5 +64,22 @@ public class Main {
         gazel.printType();
 
 
+        zil.getDiagnosed();
+        ferrari.getDiagnosed();
+        lada.getDiagnosed();
+        identifyDriverLicense(driverB);
+
+
+
+    }
+
+    public static void identifyDriverLicense(Driver driver){
+        try {
+            if (driver.getCategory().isEmpty() | driver.getCategory() == null) {
+                throw new DriverLicenseException("У водителя " + driver.getFullName() + " неверно указан тип прав.");
+            }
+        } catch (DriverLicenseException e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

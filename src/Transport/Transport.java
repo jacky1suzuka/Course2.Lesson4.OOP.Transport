@@ -12,6 +12,8 @@ public abstract class Transport implements Competing {
         System.out.println(brand + " " + model + " начинает движение.");
     }
 
+    public abstract void getDiagnosed();
+
     public abstract void printType();
 
     public void stop() {

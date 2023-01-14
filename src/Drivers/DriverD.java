@@ -15,6 +15,7 @@ public final class DriverD extends Driver<Bus> {
 
     @Override
     public void takesPart(Bus transport) {
+        transport.setDriver(this);
         System.out.println("Водитель " + getFullName() + " управляет автомобилем " + transport.getBrand() + " "
                 + transport.getModel() + " и будет участвовать в заезде.");
     }

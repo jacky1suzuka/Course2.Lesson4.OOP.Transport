@@ -10,6 +10,7 @@ public final class DriverB extends Driver<Car> {
 
     @Override
     public void takesPart(Car transport) {
+        transport.setDriver(this);
         System.out.println("Водитель " + getFullName() + " управляет автомобилем " + transport.getBrand() + " "
                     + transport.getModel() + " и будет участвовать в заезде.");
     }

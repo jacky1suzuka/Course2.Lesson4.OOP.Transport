@@ -43,7 +43,7 @@ public class Mechanic<T extends Transport> {
     }
 
     public void carryOutMaintenance(T transport) {
-        transport.addToMechanics(this);
+        transport.addToMechanicMap(transport, this);
         System.out.println("Механик " + firstName + " " + lastName + " проводит техобслуживание у " +
                 transport.getBrand() + " " + transport.getModel() + ".");
     }

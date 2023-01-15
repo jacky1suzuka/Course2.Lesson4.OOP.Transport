@@ -2,6 +2,8 @@ package Drivers;
 
 import Transport.Transport;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Driver<T extends Transport> {
@@ -10,16 +12,34 @@ public abstract class Driver<T extends Transport> {
     private String lastName;
     private int experience;
 
+    private String category;
+
+
 
     public abstract void takesPart(T transport);
 
+
     public abstract void refuel(T transport);
 
-    public Driver(String firstName, String middleName, String lastName, int experience) {
+    public Driver(String firstName, String middleName, String lastName, int experience, String category) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
         this.experience = experience;
+
+        if (category != null && !category.isEmpty()) {
+            this.category = category;
+        } else {
+            throw new DriverLicenseException("Тип прав указан неверно");
+        }
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public void start(){

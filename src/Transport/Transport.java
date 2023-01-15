@@ -1,5 +1,10 @@
 package Transport;
 
+import Drivers.Driver;
+import Mechanics.Mechanic;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public abstract class Transport implements Competing {
@@ -7,15 +12,50 @@ public abstract class Transport implements Competing {
     private String model;
     private double engineVolume;
 
+    private List<Mechanic> mechanics = new ArrayList<>();
+
+    private Driver driver;
 
     public void start() {
         System.out.println(brand + " " + model + " начинает движение.");
     }
 
+    public abstract void getDiagnosed();
+
+    public abstract void printType();
+
     public void stop() {
         System.out.println(brand + " " + model + " останавливается.");
     }
 
+    public void addToMechanics(Mechanic mechanic) {
+        mechanics.add(mechanic);
+    }
+
+    public void getCrew() {
+        System.out.println("Водитель: " + driver.getFullName() + ".");
+        getMechanics();
+    }
+
+    public void getMechanics() {
+        System.out.print("Список механиков у " + brand + " " + model + ": ");
+        for (int i = 0; i < mechanics.size(); i++) {
+            if (i < mechanics.size() - 1) {
+                System.out.print(mechanics.get(i).getFirstName() + " " + mechanics.get(i).getLastName() + " из '" + mechanics.get(i).getCompany() +  "', ");
+            } else {
+                System.out.println(mechanics.get(i).getFirstName() + " " + mechanics.get(i).getLastName() + " из '" + mechanics.get(i).getCompany() + "'.");
+            }
+        }
+    }
+
+
+    public Driver getDriver() {
+        return driver;
+    }
+
+    public void setDriver(Driver driver) {
+        this.driver = driver;
+    }
 
     public String getBrand() {
         return brand;

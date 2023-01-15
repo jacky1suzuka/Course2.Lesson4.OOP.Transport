@@ -5,12 +5,17 @@ import Transport.Truck;
 public final class DriverC extends Driver <Truck> {
     private final String DRIVER_LICENSE = "C";
 
-    public DriverC(String firstName, String middleName, String lastName, int experience) {
-        super(firstName, middleName, lastName, experience);
+    public DriverC(String firstName, String middleName, String lastName, int experience, String category) {
+        super(firstName, middleName, lastName, experience, category);
+    }
+
+    public String getDRIVER_LICENSE() {
+        return DRIVER_LICENSE;
     }
 
     @Override
     public void takesPart(Truck transport) {
+        transport.setDriver(this);
         System.out.println("Водитель " + getFullName() + " управляет автомобилем " + transport.getBrand() + " "
                 + transport.getModel() + " и будет участвовать в заезде.");
     }

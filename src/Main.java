@@ -5,8 +5,7 @@ import Transport.Car;
 import Transport.Transport;
 import Transport.Truck;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     static List<Transport> vehicles = new ArrayList<>();
@@ -43,15 +42,27 @@ public class Main {
         Mechanic<Bus> mechanic5 = new Mechanic<Bus>("Владислав", "Кругов", "СервисЮг");
         Mechanic<Bus> mechanic6 = new Mechanic<Bus>("Леонид", "Волков", "СервисЮг");
 
+        Set<Driver<?>> drivers = new HashSet<>();
+        drivers.add(driverB);
+        drivers.add(driverB);
+        drivers.add(driverB);
+        drivers.add(driverC);
+        drivers.add(driverD);
+
+        Iterator<Driver<?>> driverIterator = drivers.iterator();
+        while (driverIterator.hasNext()) {
+            System.out.println(driverIterator.next());
+        }
 
 
 
-        driverB.takesPart(ferrari);
-        mechanic1.carryOutMaintenance(ferrari);
-        mechanic1.carryOutMaintenance(ferrari);
-        mechanic1.carryOutMaintenance(ferrari);
-        mechanic2.carryOutMaintenance(ferrari);
-        ferrari.getCrew();
+
+//        driverB.takesPart(ferrari);
+//        mechanic1.carryOutMaintenance(ferrari);
+//        mechanic1.carryOutMaintenance(ferrari);
+//        mechanic1.carryOutMaintenance(ferrari);
+//        mechanic2.carryOutMaintenance(ferrari);
+//        ferrari.getCrew();
 
 
 //        driverB.refuel(ferrari);

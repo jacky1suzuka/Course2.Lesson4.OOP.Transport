@@ -5,8 +5,7 @@ import Transport.Car;
 import Transport.Transport;
 import Transport.Truck;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     static List<Transport> vehicles = new ArrayList<>();
@@ -43,38 +42,59 @@ public class Main {
         Mechanic<Bus> mechanic5 = new Mechanic<Bus>("Владислав", "Кругов", "СервисЮг");
         Mechanic<Bus> mechanic6 = new Mechanic<Bus>("Леонид", "Волков", "СервисЮг");
 
-
-        driverB.takesPart(ferrari);
-        driverB.refuel(ferrari);
-        mechanic.carryOutMaintenance(ferrari);
-        mechanic1.carryOutMaintenance(ferrari);
-        mechanic2.carryOutMaintenance(ferrari);
-        mechanic.fix(ferrari);
-
-        driverC.takesPart(kamaz);
-        driverC.refuel(kamaz);
-        mechanic3.carryOutMaintenance(kamaz);
-        mechanic4.carryOutMaintenance(kamaz);
-        mechanic3.fix(kamaz);
-
-        driverD.takesPart(daewoo);
-        driverD.refuel(daewoo);
-        mechanic5.carryOutMaintenance(daewoo);
-        mechanic6.carryOutMaintenance(daewoo);
-        mechanic5.fix(daewoo);
-
-
-        vehicles.get(2).getCrew();
-        vehicles.get(8).getCrew();
-        vehicles.get(6).getCrew();
-
-
-        List<Driver> drivers = new ArrayList<>();
+        Set<Driver<?>> drivers = new HashSet<>();
+        drivers.add(driverB);
+        drivers.add(driverB);
         drivers.add(driverB);
         drivers.add(driverC);
         drivers.add(driverD);
 
-        System.out.println(drivers);
+        Iterator<Driver<?>> driverIterator = drivers.iterator();
+        while (driverIterator.hasNext()) {
+            System.out.println(driverIterator.next());
+        }
+
+
+
+
+//        driverB.takesPart(ferrari);
+//        mechanic1.carryOutMaintenance(ferrari);
+//        mechanic1.carryOutMaintenance(ferrari);
+//        mechanic1.carryOutMaintenance(ferrari);
+//        mechanic2.carryOutMaintenance(ferrari);
+//        ferrari.getCrew();
+
+
+//        driverB.refuel(ferrari);
+//        mechanic.carryOutMaintenance(ferrari);
+//        mechanic1.carryOutMaintenance(ferrari);
+//        mechanic2.carryOutMaintenance(ferrari);
+//        mechanic.fix(ferrari);
+//
+//        driverC.takesPart(kamaz);
+//        driverC.refuel(kamaz);
+//        mechanic3.carryOutMaintenance(kamaz);
+//        mechanic4.carryOutMaintenance(kamaz);
+//        mechanic3.fix(kamaz);
+//
+//        driverD.takesPart(daewoo);
+//        driverD.refuel(daewoo);
+//        mechanic5.carryOutMaintenance(daewoo);
+//        mechanic6.carryOutMaintenance(daewoo);
+//        mechanic5.fix(daewoo);
+//
+//
+//        vehicles.get(2).getCrew();
+//        vehicles.get(8).getCrew();
+//        vehicles.get(6).getCrew();
+//
+//
+//        List<Driver> drivers = new ArrayList<>();
+//        drivers.add(driverB);
+//        drivers.add(driverC);
+//        drivers.add(driverD);
+//
+//        System.out.println(drivers);
 
 
 

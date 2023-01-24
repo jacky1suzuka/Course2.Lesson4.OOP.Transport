@@ -3,16 +3,14 @@ package Transport;
 import Drivers.Driver;
 import Mechanics.Mechanic;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public abstract class Transport implements Competing {
     private String brand;
     private String model;
     private double engineVolume;
 
-    private List<Mechanic> mechanics = new ArrayList<>();
+    public Map<Transport, Mechanic> mechanicMap = new HashMap<>();
 
     private Driver driver;
 
@@ -28,24 +26,19 @@ public abstract class Transport implements Competing {
         System.out.println(brand + " " + model + " останавливается.");
     }
 
-    public void addToMechanics(Mechanic mechanic) {
-        mechanics.add(mechanic);
+    public void addToMechanicMap(Transport transport, Mechanic mechanic) {
+        mechanicMap.put(transport, mechanic);
     }
 
     public void getCrew() {
-        System.out.println("Водитель: " + driver.getFullName() + ".");
+        System.out.println("Водитель " + brand + " " + model + ": "  + driver.getFullName() + ".");
         getMechanics();
     }
 
     public void getMechanics() {
-        System.out.print("Список механиков у " + brand + " " + model + ": ");
-        for (int i = 0; i < mechanics.size(); i++) {
-            if (i < mechanics.size() - 1) {
-                System.out.print(mechanics.get(i).getFirstName() + " " + mechanics.get(i).getLastName() + " из '" + mechanics.get(i).getCompany() +  "', ");
-            } else {
-                System.out.println(mechanics.get(i).getFirstName() + " " + mechanics.get(i).getLastName() + " из '" + mechanics.get(i).getCompany() + "'.");
-            }
-        }
+        System.out.println("Список механиков у " + brand + " " + model + ": ");
+        System.out.println(mechanicMap.get(this).getFirstName() + " " + mechanicMap.get(this).getLastName() + " из '" +
+                mechanicMap.get(this).getCompany() + "'");
     }
 
 
